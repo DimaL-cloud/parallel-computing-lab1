@@ -17,7 +17,7 @@ public class SingleThreadedMatrixBuilder {
         var random = new Random();
         int[][] matrix = new int[MATRIX_SIZE][MATRIX_SIZE];
 
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         for (int i = 0; i < MATRIX_SIZE; i++) {
             int maxColumnValue = Integer.MIN_VALUE;
             for (int j = 0; j < MATRIX_SIZE; j++) {
@@ -29,9 +29,9 @@ public class SingleThreadedMatrixBuilder {
             }
             matrix[i][i] = maxColumnValue;
         }
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
-        log.info("Execution time: {}ms", end - start);
+        log.info("Execution time: {}ms", (end - start) / 1_000_000);
     }
 
     private static void printMatrix(int[][] matrix) {
