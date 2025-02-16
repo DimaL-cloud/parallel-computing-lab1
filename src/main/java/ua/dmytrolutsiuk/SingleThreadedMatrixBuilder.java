@@ -5,13 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Random;
 
 /**
- * Заповнити квадратну матрицю випадковими числами. На головній діагоналі розмістити максимальний елемент стовпчика.
- * Без використання багатопоточності.
+ * Fill the square matrix with random numbers. Place the maximum column element on the main diagonal.
+ * Without using multithreading.
  */
 @Slf4j
 public class SingleThreadedMatrixBuilder {
 
-    private static final int MATRIX_SIZE = 10;
+    private static final int MATRIX_SIZE = 50_000;
 
     public static void main(String[] args) {
         var random = new Random();
